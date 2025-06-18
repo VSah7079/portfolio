@@ -8,14 +8,12 @@ export default defineConfig({
     rollupOptions: {
       external: [
         'react-icons/fa',
-        'react-icons/hi',
-        'react-router-dom'
+        'react-icons/hi'
       ],
       output: {
         globals: {
           'react-icons/fa': 'Fa',
-          'react-icons/hi': 'Hi',
-          'react-router-dom': 'ReactRouterDOM'
+          'react-icons/hi': 'Hi'
         }
       }
     }

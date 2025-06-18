@@ -1,13 +1,24 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
-import { FaGithub, FaLinkedin, FaTwitter, FaCode, FaLaptopCode, FaServer } from 'react-icons/fa'
-import { HiDownload } from 'react-icons/hi'
 import { TypeAnimation } from 'react-type-animation'
 
-const FloatingIcon = ({ icon: Icon, delay }) => {
+// Import icons individually to avoid build issues
+import { FaGithub } from 'react-icons/fa'
+import { FaLinkedin } from 'react-icons/fa'
+import { FaTwitter } from 'react-icons/fa'
+import { FaCode } from 'react-icons/fa'
+import { FaLaptopCode } from 'react-icons/fa'
+import { FaServer } from 'react-icons/fa'
+import { HiDownload } from 'react-icons/hi'
+
+const FloatingIcon = ({ icon: Icon, delay, position }) => {
   return (
     <motion.div
       className="absolute text-accent/30"
+      style={{
+        left: `${position.x}%`,
+        top: `${position.y}%`
+      }}
       initial={{ y: 0, x: 0, opacity: 0 }}
       animate={{
         y: [0, -20, 0],
@@ -29,6 +40,16 @@ const FloatingIcon = ({ icon: Icon, delay }) => {
 const About = () => {
   const [isHovered, setIsHovered] = useState(false)
 
+  // Generate random positions for floating icons
+  const floatingIcons = Array.from({ length: 20 }, (_, i) => ({
+    icon: [FaCode, FaLaptopCode, FaServer][i % 3],
+    delay: i * 0.2,
+    position: {
+      x: Math.random() * 100,
+      y: Math.random() * 100
+    }
+  }))
+
   return (
     <motion.div 
       className="min-h-screen flex items-center justify-center py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
@@ -38,11 +59,12 @@ const About = () => {
     >
       {/* Floating Icons Background */}
       <div className="absolute inset-0 pointer-events-none">
-        {[...Array(20)].map((_, i) => (
+        {floatingIcons.map((icon, i) => (
           <FloatingIcon 
             key={i} 
-            icon={[FaCode, FaLaptopCode, FaServer][i % 3]} 
-            delay={i * 0.2}
+            icon={icon.icon}
+            delay={icon.delay}
+            position={icon.position}
           />
         ))}
       </div>

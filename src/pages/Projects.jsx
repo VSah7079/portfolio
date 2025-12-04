@@ -63,12 +63,11 @@ const Projects = () => {
 
   const projects = [
     {
-      title: 'E-Commerce Platform',
+      title: 'Grocerry Point',
       description: 'A full-stack e-commerce platform with user authentication, product management, and payment integration.',
       image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600&q=80',
       technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-      liveDemo: 'https://example.com',
-      github: 'https://github.com/yourusername/project',
+      github: 'https://github.com/VSah7079/GrocerryPoint',
     },
     {
       title: 'Task Management App',

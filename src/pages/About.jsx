@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { FaGithub, FaLinkedin, FaEnvelope, FaGraduationCap, FaLightbulb, FaUsers } from 'react-icons/fa'
 
 const About = () => {
   const skills = {
@@ -41,18 +42,21 @@ const About = () => {
   }
 
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen pt-16 bg-gradient-to-b from-slate-900 to-black text-white relative overflow-hidden">
+      <div className="absolute -right-32 -top-32 w-96 h-96 rounded-full bg-gradient-to-tr from-accent/30 via-transparent to-transparent blur-3xl opacity-40 pointer-events-none" />
+
       <div className="container mx-auto px-4 py-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
+          className="bg-white/5 backdrop-blur-md border border-white/6 rounded-2xl p-8 shadow-xl"
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16 items-start">
             {/* Profile Section */}
-            <div>
-              <h1 className="text-4xl font-bold mb-6">About Me</h1>
-              <div className="relative w-64 h-64 mx-auto mb-8 rounded-full overflow-hidden">
+            <div className="space-y-4">
+              <h1 className="text-4xl font-bold mb-2">About Me</h1>
+              <div className="w-64 h-64 mx-auto mb-4 rounded-full overflow-hidden border-4 border-accent/30 shadow-xl sticky top-28">
                 <img
                   src="/Vivek.png"
                   alt="Profile"
@@ -77,24 +81,24 @@ const About = () => {
             <div>
               <h2 className="text-2xl font-bold mb-6 text-secondary">Education</h2>
               <div className="space-y-6">
-                <div className="bg-tertiary p-6 rounded-lg">
-                  <h3 className="text-xl font-bold mb-2">Bachelor of Technology in Computer Science</h3>
+                <motion.div whileHover={{ y: -6 }} className="bg-tertiary p-6 rounded-lg border border-white/6">
+                  <h3 className="text-xl font-bold mb-2 flex items-center gap-2"><FaGraduationCap className="text-accent" />Bachelor of Technology in Computer Science</h3>
                   <p className="text-textSecondary mb-2">RK University Rajkot, Gujarat</p>
                   <p className="text-textSecondary mb-2">Current CGPA: 6.95</p>
                   <p className="text-textSecondary">2022 - 2026</p>
-                </div>
-                <div className="bg-tertiary p-6 rounded-lg">
-                  <h3 className="text-xl font-bold mb-2">12th Science(PCM)</h3>
+                </motion.div>
+                <motion.div whileHover={{ y: -6 }} className="bg-tertiary p-6 rounded-lg border border-white/6">
+                  <h3 className="text-xl font-bold mb-2 flex items-center gap-2"><FaGraduationCap className="text-accent" />12th Science(PCM)</h3>
                   <p className="text-textSecondary mb-2">B.P.S College Bhore,Gopalganj,Bihar</p>
                   <p className="text-textSecondary mb-2">Percentage : 65.2%</p>
                   <p className="text-textSecondary">2022</p>
-                </div>
-                <div className="bg-tertiary p-6 rounded-lg">
-                  <h3 className="text-xl font-bold mb-2">10th Secondary School Of Examination</h3>
+                </motion.div>
+                <motion.div whileHover={{ y: -6 }} className="bg-tertiary p-6 rounded-lg border border-white/6">
+                  <h3 className="text-xl font-bold mb-2 flex items-center gap-2"><FaGraduationCap className="text-accent" />10th Secondary School Of Examination</h3>
                   <p className="text-textSecondary mb-2">Sarvodya High School Kalopatti Gopalganj,Bihar</p>
                   <p className="text-textSecondary mb-2">Percentage : 60.8%</p>
                   <p className="text-textSecondary">2020</p>
-                </div>
+                </motion.div>
               </div>
             </div>
           </div>

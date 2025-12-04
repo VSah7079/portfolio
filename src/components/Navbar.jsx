@@ -15,7 +15,7 @@ const Navbar = () => {
   ]
 
   return (
-    <nav className="bg-primary fixed w-full z-50">
+    <nav className="bg-primary/95 backdrop-blur-sm fixed w-full z-50">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="text-2xl font-bold text-secondary">
@@ -23,12 +23,12 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex space-x-2">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 to={item.path}
-                className="text-textSecondary hover:text-secondary transition-colors"
+                className="text-textSecondary hover:text-secondary transition-colors px-3 py-2 rounded-md"
               >
                 {item.name}
               </Link>
@@ -37,7 +37,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-textPrimary"
+            className="md:hidden text-textPrimary hover:text-secondary"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? (
@@ -56,7 +56,7 @@ const Navbar = () => {
                 <Link
                   key={item.name}
                   to={item.path}
-                  className="block px-3 py-2 text-textSecondary hover:text-secondary transition-colors"
+                  className="block px-3 py-2 text-textSecondary hover:text-secondary transition-colors rounded-md hover:bg-primary/10"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}
